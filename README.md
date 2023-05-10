@@ -33,7 +33,7 @@ All concepts are illustrated with numerous examples, which you can play with dir
 	2. ITERATIVE PROMPTS:
 	
 	Issue 1: The text is too long - Limit the number of words/sentences/characters.
-	Issue 2. Text focuses on the wrong details - Ask it to focus on the aspects that are relevant to the intended audience.
+	Issue 2. Text focuses on the wrong details - Ask it to focus on the aspects that are relevant to the intended 	 audience.
 	Issue 3. Description needs a table of dimensions - Ask it to extract information and organize it in a table.
 	
 	Longer prompts are fine, explain each task step by step for the LLM to perform.
@@ -67,54 +67,53 @@ All concepts are illustrated with numerous examples, which you can play with dir
 	Technical specifications: ```{fact_sheet_chair}```
 	"""
 
-3. Summarizing:
-	1. Summarize with a word/sentence/character limit
-	2. Summarize with a focus on <"key words"> (eg., shipping and delivery)
-	3. Summarize with a focus on price and value
-	4. Try "extract" instead of "summarize"
+	3. Summarizing:
+		1. Summarize with a word/sentence/character limit
+		2. Summarize with a focus on <"key words"> (eg., shipping and delivery)
+		3. Summarize with a focus on price and value
+		4. Try "extract" instead of "summarize"
 	
-4. INFERRING:
+	4. INFERRING:
 
-You will infer sentiment and topics from text,
-Sentiment (positive/negative)
-Identify types of emotions
-Extract key info from text
-Doing multiple tasks at once
-Eg., Identify the following items from the review text: 
-- Sentiment (positive or negative)
-- Is the reviewer expressing anger? (true or false)
-- Item purchased by reviewer
-- Company that made the item
+	You will infer sentiment and topics from text,
+	Sentiment (positive/negative)
+	Identify types of emotions
+	Extract key info from text
+	Doing multiple tasks at once
+	Eg., Identify the following items from the review text: 
+	- Sentiment (positive or negative)
+	- Is the reviewer expressing anger? (true or false)
+	- Item purchased by reviewer
+	- Company that made the item
 
-5. Transforming:
-Language Translation
-Tone Transformation(Formal to Informal)
-Format Conversion (JSON to HTML)
-Spellcheck/Grammar check
+	5. Transforming:
+	Language Translation
+	Tone Transformation(Formal to Informal)
+	Format Conversion (JSON to HTML)
+	Spellcheck/Grammar check
 
-6. Expanding:
-you will generate customer service emails that are tailored to each customer's review
+	6. Expanding:
+	you will generate customer service emails that are tailored to each customer's review
 
-Customize the automated reply to a customer email
-Eg., prompt = f"""
-You are a customer service AI assistant.
-Your task is to send an email reply to a valued customer.
-Given the customer email delimited by ```, \
-Generate a reply to thank the customer for their review.
-If the sentiment is positive or neutral, thank them for \
-their review.
-If the sentiment is negative, apologize and suggest that \
-they can reach out to customer service. 
-Make sure to use specific details from the review.
-Write in a concise and professional tone.
-Sign the email as `AI customer agent`.
-Customer review: ```{review}```
-Review sentiment: {sentiment}
-"""
-Remind the model to use details from the customer's email
+	Customize the automated reply to a customer email
+	Eg., prompt = f"""
+	You are a customer service AI assistant.
+	Your task is to send an email reply to a valued customer.
+	Given the customer email delimited by ```, \
+	Generate a reply to thank the customer for their review.
+	If the sentiment is positive or neutral, thank them for \
+	their review.
+	If the sentiment is negative, apologize and suggest that \
+	they can reach out to customer service. 
+	Make sure to use specific details from the review.
+	Write in a concise and professional tone.
+	Sign the email as `AI customer agent`.
+	Customer review: ```{review}```
+	Review sentiment: {sentiment}
+	"""
+	Remind the model to use details from the customer's email
 
-temperature 
-In general, when building applications where you want a kind of predictable response, I would recommend using temperature zero.
-If you're trying to build a system that is reliable and predictable, you should go with 0. If you're trying to kind of use the model in a more creative way where you might kind of want a kind of wider variety of different outputs, you might want to use a higher temperature.
-So, to summarise, at higher temperatures, the outputs from the model are kind of more random. You can almost think of it as that at higher temperatures, the assistant is more distractible, but maybe more creative.
-![image](https://github.com/rameshveer/chatgpt-prompt-engineering/assets/33208994/9ab06412-164b-431b-98a8-1189baffa1d9)
+	temperature 
+	In general, when building applications where you want a kind of predictable response, I would recommend using temperature zero.
+	If you're trying to build a system that is reliable and predictable, you should go with 0. If you're trying to kind of use the model in a more creative way where you might kind of want a kind of wider variety of different outputs, you might want to use a higher temperature.
+	So, to summarise, at higher temperatures, the outputs from the model are kind of more random. You can almost think of it as that at higher temperatures, the assistant is more distractible, but maybe more creative.
